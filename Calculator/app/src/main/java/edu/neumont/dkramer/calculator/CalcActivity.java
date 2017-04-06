@@ -33,7 +33,7 @@ public class CalcActivity extends AppCompatActivity {
 
         // update views
         TextView numView = (TextView)(findViewById(R.id.calcNumView));
-        numView.setText("" + calcModel.getRunningTotal());
+        numView.setText(calcModel.getRunningTotalDisplay());
 
         TextView calcView = (TextView)(findViewById(R.id.calcInputView));
         calcView.setText(calcModel.getCalcText());

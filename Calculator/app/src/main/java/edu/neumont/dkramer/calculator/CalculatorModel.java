@@ -38,9 +38,6 @@ public class CalculatorModel {
     // flag to check if last number before the operator has been captured
     protected boolean m_didCaptureNumBeforeOperator;
 
-    // flag to check if token was entered correctly
-    protected boolean m_lastTokenWasValid;
-
 
     public CalculatorModel() {
         clear();
@@ -114,9 +111,11 @@ public class CalculatorModel {
 
     protected void evaluate() {
         if (m_calcText.isEmpty()) { return; }
-
         double num = Double.parseDouble(m_currentNum);
+        evaluate(num);
+    }
 
+    protected void evaluate(double num) {
         switch(m_lastOperator) {
             case ADD:
                 m_tempRunningTotal = (m_runningTotal + num);
@@ -136,6 +135,11 @@ public class CalculatorModel {
                 m_tempRunningTotal = num;
                 break;
         }
+    }
+
+    public String getRunningTotalDisplay() {
+        String result = "" + m_tempRunningTotal;
+        return result;
     }
 
     public double getRunningTotal() {
