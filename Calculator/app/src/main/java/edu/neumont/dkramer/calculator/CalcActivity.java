@@ -1,10 +1,12 @@
 package edu.neumont.dkramer.calculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.TextView;
 
 public class CalcActivity extends AppCompatActivity {
@@ -36,6 +38,17 @@ public class CalcActivity extends AppCompatActivity {
         TextView calcView = (TextView)(findViewById(R.id.calcInputView));
         calcView.setText(calcModel.getCalcText());
     }
+
+    public void binaryModeButtonClicked(View view) {
+        // Disable all buttons except the 1 and 0
+        GridLayout gridLayout = (GridLayout)findViewById(R.id.gridLayout);
+        gridLayout.setVisibility(View.INVISIBLE);
+
+        // go to binary mode
+        Intent binaryCalcActivity = new Intent(this, BinaryCalcActivity.class);
+        startActivity(binaryCalcActivity);
+    }
+
 
     public void equalsCalcButtonClicked(View view) {
         TextView numView = (TextView)(findViewById(R.id.calcNumView));

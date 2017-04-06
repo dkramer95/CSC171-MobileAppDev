@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="defaultCalcDisplayLabel">0</string>
+    <string name="title_activity_binary_calc">BinaryCalcActivity</string>
 </resources>

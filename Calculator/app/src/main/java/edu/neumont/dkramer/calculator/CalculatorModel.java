@@ -17,8 +17,6 @@ public class CalculatorModel {
     public static final String DIV      = "÷";
     public static final String DECIMAL  = ".";
 
-
-
     // the active number that is being entered
     protected String m_currentNum;
 
