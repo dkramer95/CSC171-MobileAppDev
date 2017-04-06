@@ -105,12 +105,12 @@ public class CalculatorModel {
         m_didCaptureNumBeforeOperator = false;
         m_currentNum += digit;
 
-        // perform evaluation on the last operator
-        evaluate();
+        if (!m_calcText.isEmpty()) {
+            evaluate();
+        }
     }
 
     protected void evaluate() {
-        if (m_calcText.isEmpty()) { return; }
         double num = Double.parseDouble(m_currentNum);
         evaluate(num);
     }

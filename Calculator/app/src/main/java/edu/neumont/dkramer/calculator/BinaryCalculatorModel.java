@@ -11,18 +11,9 @@ public class BinaryCalculatorModel extends CalculatorModel {
 
     @Override
     protected void evaluate() {
-        if (m_calcText.isEmpty()) { return; }
-
-        Log.i("INFO", "Current num=" + m_currentNum);
-
         // ensure that we're in base 2
         int num = Integer.parseInt(m_currentNum, 2);
         evaluate(num);
-
-        String binStr = Integer.toBinaryString(num);
-
-        Log.i("INFO", "Base10 value: " + num);
-        Log.i("INFO", "Binary string value: " + binStr);
     }
 
     @Override
