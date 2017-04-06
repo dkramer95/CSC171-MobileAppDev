@@ -5,19 +5,51 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class CalcActivity extends AppCompatActivity {
+    protected static CalculatorModel calcModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc);
+        init();
+    }
+
+    protected void init() {
+        calcModel = new CalculatorModel();
+        Log.i("Info", "Calculator model instance created!");
     }
 
     public void calcButtonClicked(View view)
     {
         Button btn = (Button)view;
-        String text = btn.getText().toString();
-        Log.i("Info", "Button: " + text + ", was pressed!");
+        String btnText = btn.getText().toString();
+
+        calcModel.processToken(btnText);
+
+        // update views
+        TextView numView = (TextView)(findViewById(R.id.calcNumView));
+        numView.setText("" + calcModel.getRunningTotal());
+
+        TextView calcView = (TextView)(findViewById(R.id.calcInputView));
+        calcView.setText(calcModel.getCalcText());
+    }
+
+    public void equalsCalcButtonClicked(View view) {
+        TextView numView = (TextView)(findViewById(R.id.calcNumView));
+
+        numView.setText("" + calcModel.getRunningTotal());
+    }
+
+    public void clearCalcButtonClicked(View view) {
+        calcModel.clear();
+
+        TextView numView = (TextView)(findViewById(R.id.calcNumView));
+        numView.setText("0");
+
+        TextView calcView = (TextView)(findViewById(R.id.calcInputView));
+        calcView.setText("");
     }
 }
