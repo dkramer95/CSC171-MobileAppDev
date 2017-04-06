@@ -40,15 +40,14 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     public void binaryModeButtonClicked(View view) {
-        // Disable all buttons except the 1 and 0
-        GridLayout gridLayout = (GridLayout)findViewById(R.id.gridLayout);
-        gridLayout.setVisibility(View.INVISIBLE);
-
-        // go to binary mode
         Intent binaryCalcActivity = new Intent(this, BinaryCalcActivity.class);
         startActivity(binaryCalcActivity);
     }
 
+    public void hexModeButtonClicked(View view) {
+        Intent hexCalcActivity = new Intent(this, HexCalcActivity.class);
+        startActivity(hexCalcActivity);
+    }
 
     public void equalsCalcButtonClicked(View view) {
         TextView numView = (TextView)(findViewById(R.id.calcNumView));

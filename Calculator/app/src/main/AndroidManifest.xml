@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BinaryCalcActivity"></activity>
+        <activity android:name=".BinaryCalcActivity" />
+        <activity android:name=".HexCalcActivity"></activity>
     </application>
 
 </manifest>
