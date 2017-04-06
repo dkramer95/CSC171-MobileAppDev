@@ -40,23 +40,42 @@ public class CalculatorModel {
     // flag to check if last number before the operator has been captured
     protected boolean m_didCaptureNumBeforeOperator;
 
+    // flag to check if token was entered correctly
+    protected boolean m_lastTokenWasValid;
+
 
     public CalculatorModel() {
         clear();
     }
 
     public void processToken(String token) {
-        updateText(token);
+        if (isValidToken(token)) {
+            updateText(token);
 
-        if (isDigit(token)) {
-            processDigit(token);
-        } else {
-            processOperator(token);
+            if (isDigit(token)) {
+                processDigit(token);
+            } else {
+                processOperator(token);
+            }
         }
     }
 
+    protected boolean isValidToken(String token) {
+        boolean isValid = !isTokenBeforeAnyNumber(token) && !isDuplicateDecimal(token);
+        return isValid;
+    }
+
+    protected boolean isTokenBeforeAnyNumber(String token) {
+        boolean result = (!isDigit(token) && (m_currentNum.isEmpty() && m_runningTotal == 0.0));
+        return result;
+    }
+
+    protected boolean isDuplicateDecimal(String token) {
+        boolean result = (token.equals(".") && m_currentNumHasDecimal);
+        return result;
+    }
+
     protected void updateText(String token) {
-        // updateText
         m_calcText += token;
     }
 
@@ -71,15 +90,19 @@ public class CalculatorModel {
     }
 
     protected void processOperator(String op) {
-        m_lastOperator = op;
-
         switch (op) {
             case DECIMAL:
                 checkDecimal();
                 break;
-            default:
+            case ADD:
+            case SUB:
+            case MULT:
+            case DIV:
+                m_lastOperator = op;
                 checkNumCapture();
                 break;
+            default:
+                throw new IllegalArgumentException("Invalid Operator: [" + op + "]");
         }
     }
 
@@ -130,15 +153,19 @@ public class CalculatorModel {
     }
 
     protected void checkNumCapture() {
+        if (m_currentNum.isEmpty() && m_runningTotal == 0.0) { return; }
+
         if (!m_didCaptureNumBeforeOperator) {
             double num = Double.parseDouble(m_currentNum);
 
             m_runningTotal = m_tempRunningTotal;
-//            m_runningTotal += num;
             m_didCaptureNumBeforeOperator = true;
 
             // clear out current num, now that we've captured it
             m_currentNum = "";
+
+            // reset decimal flag, since we're on to another number
+            m_currentNumHasDecimal = false;
         }
     }
 

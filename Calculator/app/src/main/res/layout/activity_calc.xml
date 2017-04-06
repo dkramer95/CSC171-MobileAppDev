@@ -235,9 +235,16 @@
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
-        <Space
+        <Button
+            android:id="@+id/buttonDecimal"
             android:layout_width="wrap_content"
-            android:layout_height="60dp" />
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="@android:color/holo_blue_light"
+            android:onClick="calcButtonClicked"
+            android:text="."
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/button0"
