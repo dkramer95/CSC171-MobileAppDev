@@ -53,7 +53,7 @@ public class CalcActivity extends AppCompatActivity {
     public void equalsCalcButtonClicked(View view) {
         TextView numView = (TextView)(findViewById(R.id.calcNumView));
 
-        numView.setText("" + calcModel.getRunningTotal());
+        numView.setText(calcModel.getCalcText());
     }
 
     public void clearCalcButtonClicked(View view) {

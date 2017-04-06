@@ -25,9 +25,17 @@ public class BinaryCalculatorModel extends CalculatorModel {
         Log.i("INFO", "Binary string value: " + binStr);
     }
 
+    @Override
     protected boolean isValidToken(String token) {
-        boolean isValid = super.isValidToken(token) && !isDuplicateLeadingZero(token);
+        boolean isValid =   super.isValidToken(token)
+                            && !isDuplicateLeadingZero(token)
+                            && !checkOverflow(token);
         return isValid;
+    }
+
+    protected boolean checkOverflow(String token) {
+        boolean willOverflow = (m_currentNum.length() + 1 >= 32);
+        return willOverflow;
     }
 
     protected boolean isDuplicateLeadingZero(String token) {
