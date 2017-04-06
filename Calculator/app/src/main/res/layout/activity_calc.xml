@@ -72,6 +72,7 @@
                 android:id="@+id/buttonBinaryMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="2dp"
                 android:onClick="binaryModeButtonClicked"
                 android:text="Binary"
                 tools:layout_editor_absoluteX="27dp"
@@ -81,8 +82,17 @@
                 android:id="@+id/buttonHexMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="2dp"
                 android:onClick="hexModeButtonClicked"
                 android:text="Hex" />
+
+            <Button
+                android:id="@+id/buttonDecimalMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:onClick="decimalModeButtonClicked"
+                android:text="Decimal" />
 
         </TableRow>
 

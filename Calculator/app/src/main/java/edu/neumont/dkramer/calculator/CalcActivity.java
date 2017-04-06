@@ -49,6 +49,11 @@ public class CalcActivity extends AppCompatActivity {
         startActivity(hexCalcActivity);
     }
 
+    public void decimalModeButtonClicked(View view) {
+        Intent decimalCalcActivity = new Intent(this, CalcActivity.class);
+        startActivity(decimalCalcActivity);
+    }
+
     public void equalsCalcButtonClicked(View view) {
         TextView numView = (TextView)(findViewById(R.id.calcNumView));
 
