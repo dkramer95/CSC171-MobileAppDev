@@ -108,8 +108,8 @@
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="370dp"
-        android:layout_height="337dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="326dp"
+        android:layout_marginBottom="6dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -127,19 +127,6 @@
 
 
         <Button
-            android:id="@+id/buttonClear"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="3"
-            android:layout_margin="2dp"
-            android:layout_row="0"
-            android:background="@android:color/holo_blue_dark"
-            android:onClick="clearCalcButtonClicked"
-            android:text="CLEAR"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp" />
-
-        <Button
             android:id="@+id/buttonDivide"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -153,19 +140,6 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button8"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="1"
-            android:layout_margin="2dp"
-            android:layout_row="2"
-            android:background="@android:color/holo_blue_light"
-            android:onClick="calcButtonClicked"
-            android:text="8"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp" />
-
-        <Button
             android:id="@+id/buttonMultiply"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -175,19 +149,6 @@
             android:background="@android:color/holo_blue_dark"
             android:onClick="calcButtonClicked"
             android:text="×"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="1"
-            android:layout_margin="2dp"
-            android:layout_row="3"
-            android:background="@android:color/holo_blue_light"
-            android:onClick="calcButtonClicked"
-            android:text="5"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
@@ -218,19 +179,6 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="1"
-            android:layout_margin="2dp"
-            android:layout_row="4"
-            android:background="@android:color/holo_blue_light"
-            android:onClick="calcButtonClicked"
-            android:text="2"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp" />
-
-        <Button
             android:id="@+id/buttonEquals"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -244,7 +192,7 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button0"
+            android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_column="1"
@@ -252,7 +200,20 @@
             android:layout_row="5"
             android:background="@android:color/holo_blue_light"
             android:onClick="calcButtonClicked"
-            android:text="0"
+            android:text="1"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_margin="2dp"
+            android:layout_row="5"
+            android:background="@android:color/holo_blue_light"
+            android:onClick="calcButtonClicked"
+            android:text="2"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
@@ -260,7 +221,7 @@
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_column="2"
+            android:layout_column="0"
             android:layout_margin="2dp"
             android:layout_row="4"
             android:background="@android:color/holo_blue_light"
@@ -270,15 +231,28 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_column="0"
+            android:layout_column="1"
             android:layout_margin="2dp"
             android:layout_row="4"
             android:background="@android:color/holo_blue_light"
             android:onClick="calcButtonClicked"
-            android:text="1"
+            android:text="4"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_margin="2dp"
+            android:layout_row="4"
+            android:background="@android:color/holo_blue_light"
+            android:onClick="calcButtonClicked"
+            android:text="5"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
@@ -286,7 +260,7 @@
             android:id="@+id/button6"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_column="2"
+            android:layout_column="0"
             android:layout_margin="2dp"
             android:layout_row="3"
             android:background="@android:color/holo_blue_light"
@@ -296,15 +270,28 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_column="0"
+            android:layout_column="1"
             android:layout_margin="2dp"
             android:layout_row="3"
             android:background="@android:color/holo_blue_light"
             android:onClick="calcButtonClicked"
-            android:text="4"
+            android:text="7"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_margin="2dp"
+            android:layout_row="3"
+            android:background="@android:color/holo_blue_light"
+            android:onClick="calcButtonClicked"
+            android:text="8"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
@@ -312,7 +299,7 @@
             android:id="@+id/button9"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_column="2"
+            android:layout_column="0"
             android:layout_margin="2dp"
             android:layout_row="2"
             android:background="@android:color/holo_blue_light"
@@ -322,41 +309,15 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button7"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="0"
-            android:layout_margin="2dp"
-            android:layout_row="2"
-            android:background="@android:color/holo_blue_light"
-            android:onClick="calcButtonClicked"
-            android:text="7"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp" />
-
-        <Button
             android:id="@+id/buttonA"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_column="0"
+            android:layout_column="1"
             android:layout_margin="2dp"
-            android:layout_row="1"
-            android:background="@android:color/holo_blue_light"
+            android:layout_row="2"
+            android:background="@android:color/holo_blue_bright"
             android:onClick="calcButtonClicked"
             android:text="A"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/buttonD"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_column="0"
-            android:layout_margin="2dp"
-            android:layout_row="0"
-            android:background="@android:color/holo_blue_light"
-            android:onClick="calcButtonClicked"
-            android:text="D"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
@@ -364,12 +325,25 @@
             android:id="@+id/buttonB"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_margin="2dp"
+            android:layout_row="2"
+            android:background="@android:color/holo_blue_bright"
+            android:onClick="calcButtonClicked"
+            android:text="B"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/buttonD"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
             android:layout_column="1"
             android:layout_margin="2dp"
             android:layout_row="1"
-            android:background="@android:color/holo_blue_light"
+            android:background="@android:color/holo_blue_bright"
             android:onClick="calcButtonClicked"
-            android:text="B"
+            android:text="D"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
 
@@ -377,10 +351,10 @@
             android:id="@+id/buttonE"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_column="1"
+            android:layout_column="2"
             android:layout_margin="2dp"
-            android:layout_row="0"
-            android:background="@android:color/holo_blue_light"
+            android:layout_row="1"
+            android:background="@android:color/holo_blue_bright"
             android:onClick="calcButtonClicked"
             android:text="E"
             android:textColor="@color/colorPrimary"
@@ -390,10 +364,10 @@
             android:id="@+id/buttonC"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_column="2"
+            android:layout_column="0"
             android:layout_margin="2dp"
             android:layout_row="1"
-            android:background="@android:color/holo_blue_light"
+            android:background="@android:color/holo_blue_bright"
             android:onClick="calcButtonClicked"
             android:text="C"
             android:textColor="@color/colorPrimary"
@@ -403,14 +377,68 @@
             android:id="@+id/buttonF"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_column="2"
+            android:layout_column="0"
             android:layout_margin="2dp"
             android:layout_row="0"
-            android:background="@android:color/holo_blue_light"
+            android:background="@android:color/holo_blue_bright"
             android:onClick="calcButtonClicked"
             android:text="F"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="3"
+            android:layout_margin="2dp"
+            android:layout_row="0"
+            android:background="@android:color/holo_blue_dark"
+            android:onClick="calcButtonClicked"
+            android:text="%"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="2"
+            android:layout_margin="2dp"
+            android:layout_row="0"
+            android:background="@android:color/holo_blue_dark"
+            android:onClick="calcButtonClicked"
+            android:text="^"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button0"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="0"
+            android:layout_margin="2dp"
+            android:layout_row="5"
+            android:background="@android:color/holo_blue_light"
+            android:onClick="calcButtonClicked"
+            android:text="0"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_column="1"
+            android:layout_margin="2dp"
+            android:layout_row="0"
+            android:background="@android:color/holo_blue_dark"
+            android:onClick="clearCalcButtonClicked"
+            android:text="CLEAR"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="399dp"
+            tools:layout_editor_absoluteY="-1dp" />
 
     </GridLayout>
 
