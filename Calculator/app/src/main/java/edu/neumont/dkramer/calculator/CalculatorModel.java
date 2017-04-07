@@ -44,6 +44,7 @@ public class CalculatorModel {
     // flag to check if we have entered a number
     protected boolean m_hasEnteredNum;
 
+    // starting index in calc text of the next number we're entering
     protected int m_currentNumStartIndex;
 
 
@@ -74,15 +75,18 @@ public class CalculatorModel {
         // if there is a number already, change the last operator to the current token
         boolean result = true;
 
-        if (m_didCaptureNumBeforeOperator && m_currentNum.isEmpty() && !isDigit(token)) {
+        if (!isTokenBeforeAnyNumber(token) && !isDuplicateDecimal(token)) {
+            updateText(token);
+        } else if (isChangedOperator(token)) {
             changeLastToken(token);
         } else {
-            result = (!isTokenBeforeAnyNumber(token) && !isDuplicateDecimal(token));
-
-            if (result) {
-                updateText(token);
-            }
+            result = false;
         }
+        return result;
+    }
+
+    protected boolean isChangedOperator(String token) {
+        boolean result = (m_didCaptureNumBeforeOperator && m_currentNum.isEmpty() && !token.equals("."));
         return result;
     }
 
@@ -96,7 +100,7 @@ public class CalculatorModel {
     }
 
     protected boolean isTokenBeforeAnyNumber(String token) {
-        boolean result = (!isDigit(token) && !m_hasEnteredNum);
+        boolean result = (!isDigit(token) && !m_hasEnteredNum && !token.equals("."));
         return result;
     }
 
