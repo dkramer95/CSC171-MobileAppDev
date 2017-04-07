@@ -15,6 +15,9 @@ public class CalculatorModel {
     public static final String SUB      = "-";
     public static final String MULT     = "×";
     public static final String DIV      = "÷";
+    public static final String MOD      = "%";
+    public static final String EXP      = "^";
+    public static final String SIGN     = "+/-";
     public static final String DECIMAL  = ".";
 
     // the active number that is being entered
@@ -38,21 +41,53 @@ public class CalculatorModel {
     // flag to check if last number before the operator has been captured
     protected boolean m_didCaptureNumBeforeOperator;
 
+    // flag to check if we have entered a number
+    protected boolean m_hasEnteredNum;
+
+    protected int m_currentNumStartIndex;
+
 
     public CalculatorModel() {
         clear();
     }
 
     public void processToken(String token) {
-        if (isValidToken(token)) {
-            updateText(token);
+        // check for sign change +/- token
 
-            if (isDigit(token)) {
-                processDigit(token);
-            } else {
-                processOperator(token);
+        if (token.equals(CalculatorModel.SIGN)) {
+            token = toggleSign();
+            m_calcText = m_calcText.substring(0, m_currentNumStartIndex) + token + m_currentNum;
+        } else {
+            if (validateToken(token)) {
+
+                if (isDigit(token)) {
+                    processDigit(token);
+                } else {
+                    processOperator(token);
+                }
             }
         }
+    }
+
+    protected boolean validateToken(String token) {
+        // make sure we don't add an operator before a number
+        // if there is a number already, change the last operator to the current token
+        boolean result = true;
+
+        if (m_didCaptureNumBeforeOperator && m_currentNum.isEmpty() && !isDigit(token)) {
+            changeLastToken(token);
+        } else {
+            result = (!isTokenBeforeAnyNumber(token) && !isDuplicateDecimal(token));
+
+            if (result) {
+                updateText(token);
+            }
+        }
+        return result;
+    }
+
+    protected void changeLastToken(String token) {
+        m_calcText = m_calcText.substring(0, m_calcText.length() - 1) + token;
     }
 
     protected boolean isValidToken(String token) {
@@ -61,7 +96,7 @@ public class CalculatorModel {
     }
 
     protected boolean isTokenBeforeAnyNumber(String token) {
-        boolean result = (!isDigit(token) && (m_currentNum.isEmpty() && m_runningTotal == 0.0));
+        boolean result = (!isDigit(token) && !m_hasEnteredNum);
         return result;
     }
 
@@ -82,17 +117,27 @@ public class CalculatorModel {
         m_tempRunningTotal = 0.0;
         m_currentNumHasDecimal = false;
         m_didCaptureNumBeforeOperator = false;
+        m_hasEnteredNum = false;
+        m_currentNumStartIndex = 0;
     }
 
     protected void processOperator(String op) {
+        m_hasEnteredNum = false;
+        m_currentNumStartIndex = m_calcText.length();
+
         switch (op) {
             case DECIMAL:
                 checkDecimal();
+                break;
+            case SIGN:
+                toggleSign();
                 break;
             case ADD:
             case SUB:
             case MULT:
             case DIV:
+            case MOD:
+            case EXP:
                 m_lastOperator = op;
                 checkNumCapture();
                 break;
@@ -101,8 +146,30 @@ public class CalculatorModel {
         }
     }
 
+    protected String toggleSign() {
+        // if positive, make negative
+        String token = "";
+
+        if (m_currentNum.startsWith("-")) {
+            m_currentNum = m_currentNum.substring(1);
+        } else {
+            m_currentNum = "-" + m_currentNum;
+            m_hasEnteredNum = true;
+            token = "-";
+        }
+        evaluate();
+        return token;
+    }
+
     protected void processDigit(String digit) {
         m_didCaptureNumBeforeOperator = false;
+
+        if (!m_hasEnteredNum) {
+            // capture starting index of first digit of current number to allow editing
+            // of calc text with +/-
+            m_currentNumStartIndex = (m_calcText.isEmpty()) ? 0 : m_calcText.length() - 1;
+            m_hasEnteredNum = true;
+        }
         m_currentNum += digit;
 
         if (!m_calcText.isEmpty()) {
@@ -111,8 +178,12 @@ public class CalculatorModel {
     }
 
     protected void evaluate() {
-        double num = Double.parseDouble(m_currentNum);
-        evaluate(num);
+        try {
+            double num = Double.parseDouble(m_currentNum);
+            evaluate(num);
+        } catch (NumberFormatException e) {
+
+        }
     }
 
     protected void evaluate(double num) {
@@ -128,6 +199,12 @@ public class CalculatorModel {
                 break;
             case DIV:
                 m_tempRunningTotal = (m_runningTotal / num);
+                break;
+            case MOD:
+                m_tempRunningTotal = (m_runningTotal % num);
+                break;
+            case EXP:
+                m_tempRunningTotal = Math.pow(m_runningTotal, num);
                 break;
 
             // still entering the first number
@@ -158,8 +235,6 @@ public class CalculatorModel {
         if (m_currentNum.isEmpty() && m_runningTotal == 0.0) { return; }
 
         if (!m_didCaptureNumBeforeOperator) {
-            double num = Double.parseDouble(m_currentNum);
-
             m_runningTotal = m_tempRunningTotal;
             m_didCaptureNumBeforeOperator = true;
 
@@ -170,7 +245,6 @@ public class CalculatorModel {
             m_currentNumHasDecimal = false;
         }
     }
-
 
     protected boolean isDigit(String s) {
         boolean isDigit = s.matches("\\d+");
