@@ -12,31 +12,28 @@ public class BinaryCalculatorModel extends CalculatorModel {
     @Override
     protected void evaluate() {
         // ensure that we're in base 2
-        int num = Integer.parseInt(m_currentNum, 2);
+        long num = Long.parseLong(m_currentNum, 2);
         evaluate(num);
     }
 
-    @Override
-    protected boolean isValidToken(String token) {
-        boolean isValid =   super.isValidToken(token)
-                            && !isDuplicateLeadingZero(token)
-                            && !checkOverflow(token);
+    protected boolean validateToken(String token) {
+        boolean isValid = super.validateToken(token) && !checkOverflow(token);
         return isValid;
     }
 
     protected boolean checkOverflow(String token) {
-        boolean willOverflow = (m_currentNum.length() + 1 >= 32);
+        boolean willOverflow = (m_currentNum.length() + 1 >= 64);
         return willOverflow;
     }
 
     protected boolean isDuplicateLeadingZero(String token) {
-        boolean result = (token.equals("0") && m_currentNum.equals("0"));
+        boolean result = (token.equals("0") && (m_currentNum.equals("0")));
         return result;
     }
 
     @Override
     public String getRunningTotalDisplay() {
-        String result = "" + (int)m_tempRunningTotal;
+        String result = "" + (long)m_tempRunningTotal;
         return result;
     }
 

@@ -75,7 +75,8 @@ public class CalculatorModel {
         // if there is a number already, change the last operator to the current token
         boolean result = true;
 
-        if (!isTokenBeforeAnyNumber(token) && !isDuplicateDecimal(token)) {
+        if (!isTokenBeforeAnyNumber(token) && !isDuplicateDecimal(token)
+		        && !isDuplicateLeadingZero(token)) {
             updateText(token);
         } else if (isChangedOperator(token)) {
             changeLastToken(token);
@@ -94,11 +95,6 @@ public class CalculatorModel {
         m_calcText = m_calcText.substring(0, m_calcText.length() - 1) + token;
     }
 
-    protected boolean isValidToken(String token) {
-        boolean isValid = !isTokenBeforeAnyNumber(token) && !isDuplicateDecimal(token);
-        return isValid;
-    }
-
     protected boolean isTokenBeforeAnyNumber(String token) {
         boolean result = (!isDigit(token) && !m_hasEnteredNum && !token.equals("."));
         return result;
@@ -108,6 +104,12 @@ public class CalculatorModel {
         boolean result = (token.equals(".") && m_currentNumHasDecimal);
         return result;
     }
+
+	protected boolean isDuplicateLeadingZero(String token) {
+		boolean result = (token.equals("0") &&
+				(m_currentNum.equals("0") || m_runningTotal == 0.0));
+		return result;
+	}
 
     protected void updateText(String token) {
         m_calcText += token;
@@ -133,9 +135,6 @@ public class CalculatorModel {
             case DECIMAL:
                 checkDecimal();
                 break;
-//            case SIGN:
-//                toggleSign();
-//                break;
             case ADD:
             case SUB:
             case MULT:

@@ -17,7 +17,7 @@ public class HexCalculatorModel extends BinaryCalculatorModel {
     @Override
     protected void evaluate() {
         // ensure that we're in base 16
-        int num = Integer.parseInt(m_currentNum, 16);
+        long num = Long.parseLong(m_currentNum, 16);
         evaluate(num);
     }
 }
