@@ -3,6 +3,8 @@ package edu.neumont.dkramer.calculator;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.math.BigDecimal;
+
 /**
  * Created by dkramer on 4/6/17.
  */
@@ -13,7 +15,7 @@ public class BinaryCalculatorModel extends CalculatorModel {
     protected void evaluate() {
         // ensure that we're in base 2
         long num = Long.parseLong(m_currentNum, 2);
-        evaluate(num);
+        evaluate(new BigDecimal(num));
     }
 
     protected boolean validateToken(String token) {
@@ -33,7 +35,7 @@ public class BinaryCalculatorModel extends CalculatorModel {
 
     @Override
     public String getRunningTotalDisplay() {
-        String result = "" + (long)m_tempRunningTotal;
+        String result = "" + m_tempRunningTotal.longValue();
         return result;
     }
 

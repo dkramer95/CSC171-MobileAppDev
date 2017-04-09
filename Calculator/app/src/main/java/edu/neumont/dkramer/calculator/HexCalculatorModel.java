@@ -2,6 +2,8 @@ package edu.neumont.dkramer.calculator;
 
 import android.util.Log;
 
+import java.math.BigDecimal;
+
 /**
  * Created by dkramer on 4/6/17.
  */
@@ -18,6 +20,6 @@ public class HexCalculatorModel extends BinaryCalculatorModel {
     protected void evaluate() {
         // ensure that we're in base 16
         long num = Long.parseLong(m_currentNum, 16);
-        evaluate(num);
+        evaluate(new BigDecimal(num));
     }
 }

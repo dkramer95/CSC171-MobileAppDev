@@ -1,5 +1,7 @@
 package edu.neumont.dkramer.calculator;
 
+import java.math.BigDecimal;
+
 /**
  * Backing model for a calculator that keeps track of the running total
  * and provides functions for different calculation operations.
@@ -20,6 +22,7 @@ public class CalculatorModel {
     public static final String SIGN     = "+/-";
     public static final String DECIMAL  = ".";
 
+
     // the active number that is being entered
     protected String m_currentNum;
 
@@ -30,10 +33,10 @@ public class CalculatorModel {
     protected String m_lastOperator;
 
     // the current running total after performing all operations
-    protected double m_runningTotal;
+	protected BigDecimal m_runningTotal;
 
-    // running total that is currently under evaluation
-    protected double m_tempRunningTotal;
+	// running total that is currently under evaluation
+    protected BigDecimal m_tempRunningTotal;
 
     // flag to check if current number contains a decimal point
     protected boolean m_currentNumHasDecimal;
@@ -46,6 +49,8 @@ public class CalculatorModel {
 
     // starting index in calc text of the next number we're entering
     protected int m_currentNumStartIndex;
+
+
 
 
     public CalculatorModel() {
@@ -106,8 +111,7 @@ public class CalculatorModel {
     }
 
 	protected boolean isDuplicateLeadingZero(String token) {
-		boolean result = (token.equals("0") &&
-				(m_currentNum.equals("0") || m_runningTotal == 0.0));
+		boolean result = (token.equals("0") && (m_currentNum.equals("0")));
 		return result;
 	}
 
@@ -119,8 +123,8 @@ public class CalculatorModel {
         m_currentNum = "";
         m_calcText = "";
         m_lastOperator = "";
-        m_runningTotal = 0.0;
-        m_tempRunningTotal = 0.0;
+	    m_runningTotal = BigDecimal.ZERO;
+	    m_tempRunningTotal = BigDecimal.ZERO;
         m_currentNumHasDecimal = false;
         m_didCaptureNumBeforeOperator = false;
         m_hasEnteredNum = false;
@@ -183,32 +187,32 @@ public class CalculatorModel {
 
     protected void evaluate() {
         try {
-            double num = Double.parseDouble(m_currentNum);
+            BigDecimal num = new BigDecimal(m_currentNum);
             evaluate(num);
         } catch (NumberFormatException e) {
 
         }
     }
 
-    protected void evaluate(double num) {
+    protected void evaluate(BigDecimal num) {
         switch(m_lastOperator) {
             case ADD:
-                m_tempRunningTotal = (m_runningTotal + num);
+                m_tempRunningTotal = m_runningTotal.add(num);
                 break;
             case SUB:
-                m_tempRunningTotal = (m_runningTotal - num);
+	            m_tempRunningTotal = m_runningTotal.subtract(num);
                 break;
             case MULT:
-                m_tempRunningTotal = (m_runningTotal * num);
+            	m_tempRunningTotal = m_runningTotal.multiply(num);
                 break;
             case DIV:
-                m_tempRunningTotal = (m_runningTotal / num);
+                m_tempRunningTotal = m_runningTotal.divide(num);
                 break;
             case MOD:
-                m_tempRunningTotal = (m_runningTotal % num);
+                m_tempRunningTotal = m_runningTotal.remainder(num);
                 break;
             case EXP:
-                m_tempRunningTotal = Math.pow(m_runningTotal, num);
+                m_tempRunningTotal = m_runningTotal.pow(num.intValue());
                 break;
 
             // still entering the first number
@@ -219,15 +223,15 @@ public class CalculatorModel {
     }
 
     public String getRunningTotalDisplay() {
-        String result = "" + m_tempRunningTotal;
+        String result = m_tempRunningTotal.toString();
         return result;
     }
 
-    public double getRunningTotal() {
+    public BigDecimal getRunningTotal() {
         return m_tempRunningTotal;
     }
 
-    public double getResult() {
+    public BigDecimal getResult() {
         return m_runningTotal;
     }
 
@@ -236,7 +240,7 @@ public class CalculatorModel {
     }
 
     protected void checkNumCapture() {
-        if (m_currentNum.isEmpty() && m_runningTotal == 0.0) { return; }
+        if (m_currentNum.isEmpty() && m_runningTotal.equals("0")) { return; }
 
         if (!m_didCaptureNumBeforeOperator) {
             m_runningTotal = m_tempRunningTotal;
