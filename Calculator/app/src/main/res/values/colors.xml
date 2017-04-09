@@ -9,5 +9,7 @@
     <color name="normalButtonBGPressed">#659bb3</color>
     <color name="normalHexButtonBG">#333333</color>
     <color name="normalHexButtonBGPressed">#659bb3</color>
+    <color name="normalNumViewBG">#00000000</color>
+    <color name="normalNumViewBGPressed">#333333</color>
 
 </resources>
