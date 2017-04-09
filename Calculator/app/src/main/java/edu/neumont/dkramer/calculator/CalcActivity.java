@@ -76,8 +76,11 @@ public class CalcActivity extends AppCompatActivity {
 
         calcModel.processToken(btnText);
 
-//        // update views
-	    updateView(calcModel.getRunningTotalDisplay(), calcModel.getCalcText());
+	    if (calcModel.hasError()) {
+		    updateView(calcModel.getLastErrorMessage(), "");
+	    } else {
+		    updateView(calcModel.getRunningTotalDisplay(), calcModel.getCalcText());
+	    }
     }
 
     protected void updateView(String numViewText, String calcViewText) {

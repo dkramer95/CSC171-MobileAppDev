@@ -50,6 +50,10 @@ public class CalculatorModel {
     // starting index in calc text of the next number we're entering
     protected int m_currentNumStartIndex;
 
+	// flag to check if an error occurred
+	protected boolean m_errorFlag;
+
+	protected String m_errorMessage;
 
 
 
@@ -73,6 +77,14 @@ public class CalculatorModel {
                 }
             }
         }
+    }
+
+    public boolean hasError() {
+	    return m_errorFlag;
+    }
+
+    public String getLastErrorMessage() {
+	    return m_errorMessage;
     }
 
     protected boolean validateToken(String token) {
@@ -129,6 +141,7 @@ public class CalculatorModel {
         m_didCaptureNumBeforeOperator = false;
         m_hasEnteredNum = false;
         m_currentNumStartIndex = 0;
+	    clearErrors();
     }
 
     protected void processOperator(String op) {
@@ -195,6 +208,8 @@ public class CalculatorModel {
     }
 
     protected void evaluate(BigDecimal num) {
+	    clearErrors();
+
         switch(m_lastOperator) {
             case ADD:
                 m_tempRunningTotal = m_runningTotal.add(num);
@@ -206,7 +221,12 @@ public class CalculatorModel {
             	m_tempRunningTotal = m_runningTotal.multiply(num);
                 break;
             case DIV:
-                m_tempRunningTotal = m_runningTotal.divide(num);
+            	if (num.doubleValue() == 0.0) {
+		            m_errorFlag = true;
+		            m_errorMessage = "ERROR! / by zero";
+	            } else {
+		            m_tempRunningTotal = m_runningTotal.divide(num, 8, BigDecimal.ROUND_HALF_UP).stripTrailingZeros();
+	            }
                 break;
             case MOD:
                 m_tempRunningTotal = m_runningTotal.remainder(num);
@@ -220,6 +240,11 @@ public class CalculatorModel {
                 m_tempRunningTotal = num;
                 break;
         }
+    }
+
+    protected void clearErrors() {
+	    m_errorFlag = false;
+	    m_errorMessage = "";
     }
 
     public void setValue(BigDecimal value) {
