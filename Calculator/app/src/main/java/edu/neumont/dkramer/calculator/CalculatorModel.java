@@ -97,7 +97,7 @@ public class CalculatorModel {
     }
 
     protected void changeLastToken(String token) {
-        m_calcText = m_calcText.substring(0, m_calcText.length() - 1) + token;
+        m_calcText = m_calcText.substring(0, m_calcText.length() - m_lastOperator.length()) + token;
     }
 
     protected boolean isTokenBeforeAnyNumber(String token) {

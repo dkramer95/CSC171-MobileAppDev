@@ -10,12 +10,48 @@ import java.math.BigDecimal;
  */
 
 public class BinaryCalculatorModel extends CalculatorModel {
+    public static final String BIT_AND  = "AND";
+    public static final String BIT_OR   = "OR";
+    public static final String BIT_XOR  = "XOR";
 
     @Override
     protected void evaluate() {
         // ensure that we're in base 2
         long num = Long.parseLong(m_currentNum, 2);
         evaluate(new BigDecimal(num));
+    }
+
+    @Override
+    protected void processOperator(String op) {
+	    m_hasEnteredNum = false;
+	    m_currentNumStartIndex = m_calcText.length();
+
+	    switch (op) {
+		    case BIT_AND:
+		    case BIT_OR:
+		    case BIT_XOR:
+		    	m_lastOperator = op;
+			    checkNumCapture();
+			    break;
+		    default:
+		    	super.processOperator(op);
+	    }
+    }
+
+    @Override
+    protected void evaluate(BigDecimal num) {
+        switch (m_lastOperator) {
+            case BIT_AND:
+                m_tempRunningTotal = new BigDecimal(m_tempRunningTotal.longValue() & num.longValue());
+                break;
+            case BIT_OR:
+                m_tempRunningTotal = new BigDecimal(m_tempRunningTotal.longValue() | num.longValue());
+            case BIT_XOR:
+	            m_tempRunningTotal = new BigDecimal(m_tempRunningTotal.longValue() ^ num.longValue());
+	            break;
+            default:
+                super.evaluate(num);
+        }
     }
 
     protected boolean validateToken(String token) {
