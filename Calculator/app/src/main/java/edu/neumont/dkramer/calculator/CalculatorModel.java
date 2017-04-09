@@ -52,12 +52,12 @@ public class CalculatorModel {
         clear();
     }
 
+
     public void processToken(String token) {
         // check for sign change +/- token
 
-        if (token.equals(CalculatorModel.SIGN)) {
-            token = toggleSign();
-            m_calcText = m_calcText.substring(0, m_currentNumStartIndex) + token + m_currentNum;
+        if (token.equals(SIGN)) {
+	        toggleSign();
         } else {
             if (validateToken(token)) {
 
@@ -133,9 +133,9 @@ public class CalculatorModel {
             case DECIMAL:
                 checkDecimal();
                 break;
-            case SIGN:
-                toggleSign();
-                break;
+//            case SIGN:
+//                toggleSign();
+//                break;
             case ADD:
             case SUB:
             case MULT:
@@ -150,20 +150,21 @@ public class CalculatorModel {
         }
     }
 
-    protected String toggleSign() {
-        // if positive, make negative
-        String token = "";
+	protected String toggleSign() {
+		String token = "";
 
-        if (m_currentNum.startsWith("-")) {
-            m_currentNum = m_currentNum.substring(1);
-        } else {
-            m_currentNum = "-" + m_currentNum;
-            m_hasEnteredNum = true;
-            token = "-";
-        }
-        evaluate();
-        return token;
-    }
+		if (m_currentNum.startsWith("-")) {
+			m_currentNum = m_currentNum.substring(1);
+		} else {
+			m_currentNum = "-" + m_currentNum;
+			m_hasEnteredNum = true;
+			token = "-";
+		}
+		evaluate();
+		m_calcText = m_calcText.substring(0, m_currentNumStartIndex) + token + m_currentNum;
+
+		return token;
+	}
 
     protected void processDigit(String digit) {
         m_didCaptureNumBeforeOperator = false;

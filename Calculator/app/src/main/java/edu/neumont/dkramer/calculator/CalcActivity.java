@@ -32,10 +32,10 @@ public class CalcActivity extends AppCompatActivity {
         calcModel.processToken(btnText);
 
         // update views
-        TextView numView = (TextView)(findViewById(R.id.calcNumView));
+        TextView numView = (TextView)(findViewById(R.id.calcRunningTotalView));
         numView.setText(calcModel.getRunningTotalDisplay());
 
-        TextView calcView = (TextView)(findViewById(R.id.calcInputView));
+        TextView calcView = (TextView)(findViewById(R.id.calcTextView));
         calcView.setText(calcModel.getCalcText());
     }
 
@@ -55,7 +55,7 @@ public class CalcActivity extends AppCompatActivity {
     }
 
     public void equalsCalcButtonClicked(View view) {
-        TextView numView = (TextView)(findViewById(R.id.calcNumView));
+        TextView numView = (TextView)(findViewById(R.id.calcRunningTotalView));
 
         numView.setText(calcModel.getRunningTotalDisplay());
     }
@@ -63,10 +63,10 @@ public class CalcActivity extends AppCompatActivity {
     public void clearCalcButtonClicked(View view) {
         calcModel.clear();
 
-        TextView numView = (TextView)(findViewById(R.id.calcNumView));
+        TextView numView = (TextView)(findViewById(R.id.calcRunningTotalView));
         numView.setText("0");
 
-        TextView calcView = (TextView)(findViewById(R.id.calcInputView));
+        TextView calcView = (TextView)(findViewById(R.id.calcTextView));
         calcView.setText("");
     }
 }
