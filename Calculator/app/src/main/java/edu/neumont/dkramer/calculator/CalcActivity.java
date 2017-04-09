@@ -37,7 +37,7 @@ public class CalcActivity extends AppCompatActivity {
 
         calcModel.processToken(btnText);
 
-        // update views
+//        // update views
         TextView numView = (TextView)(findViewById(R.id.calcRunningTotalView));
         numView.setText(calcModel.getRunningTotalDisplay());
 

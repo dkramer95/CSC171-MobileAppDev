@@ -222,6 +222,11 @@ public class CalculatorModel {
         }
     }
 
+    public void setValue(BigDecimal value) {
+	    m_runningTotal = value;
+	    m_tempRunningTotal = value;
+    }
+
     public String getRunningTotalDisplay() {
         String result = m_tempRunningTotal.toString();
         return result;

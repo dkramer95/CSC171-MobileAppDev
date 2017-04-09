@@ -4,11 +4,15 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.math.BigDecimal;
 
 public class BinaryCalcActivity extends CalcActivity {
 
@@ -39,6 +43,30 @@ public class BinaryCalcActivity extends CalcActivity {
     }
 
     @Override
+    public void calcButtonClicked(View view) {
+		super.calcButtonClicked(view);
+	    updateBitView();
+    }
+
+    public void clearCalcButtonClicked(View view) {
+	    super.clearCalcButtonClicked(view);
+	    resetBitButtons();
+    }
+
+    protected void updateBitView() {
+	    String binStr = Long.toBinaryString(calcModel.getRunningTotal().longValue());
+
+	    int k = 0;
+	    for (int j = binStr.length() - 1; j >= 0; --j) {
+		    int state = Integer.parseInt("" + binStr.charAt(j));
+		    int buttonId = bitButtons[k];
+		    Button button = (Button)findViewById(buttonId);
+		    button.setText("" + state);
+		    ++k;
+	    }
+    }
+
+    @Override
     protected void init() {
         calcModel = new BinaryCalculatorModel();
     }
@@ -48,7 +76,7 @@ public class BinaryCalcActivity extends CalcActivity {
         int j = 0;
 
 	    for(int buttonId : bitButtons) {
-		    bitValue = (int)Math.pow(bitValue, j);
+		    bitValue = (int)Math.pow(2, j);
 		    setBitButton(buttonId, 0, bitValue);
 		    ++j;
         }
@@ -64,7 +92,23 @@ public class BinaryCalcActivity extends CalcActivity {
     }
 
     public void setBit(View view) {
-        Button button = (Button)view;
-        int bitNum = Integer.parseInt(button.getTag().toString());
+        Button bitButton = (Button)view;
+
+	    BigDecimal currentValue = calcModel.getRunningTotal();
+	    BigDecimal bitValue = new BigDecimal(bitButton.getTag().toString());
+
+	    String value = bitButton.getText().equals("1") ? "0" : "1";
+
+	    if (value.equals("1")) {
+		    currentValue = currentValue.add(bitValue);
+	    } else {
+		    currentValue = currentValue.subtract(bitValue);
+	    }
+	    calcModel.setValue(currentValue);
+	    bitButton.setText(value);
+
+	    TextView numView = (TextView)(findViewById(R.id.calcRunningTotalView));
+	    numView.setText(calcModel.getRunningTotalDisplay());
     }
+
 }
