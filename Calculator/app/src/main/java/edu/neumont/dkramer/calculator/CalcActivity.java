@@ -1,6 +1,8 @@
 package edu.neumont.dkramer.calculator;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +16,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 public class CalcActivity extends AppCompatActivity {
     protected static CalculatorModel calcModel;
@@ -25,9 +28,45 @@ public class CalcActivity extends AppCompatActivity {
         init();
     }
 
+    @Override
+    protected void onPause() {
+	    saveValues();
+	    super.onPause();
+    }
+
+    protected void openValues() {
+		SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+	    String lastResult = sharedPref.getString(getSaveLastResultString(), "0");
+	    String lastCalcText = sharedPref.getString(getSaveLastCalcString(), "");
+
+	    BigDecimal value = new BigDecimal(lastResult);
+	    calcModel.setValue(value);
+	    calcModel.setCalcText(lastCalcText);
+
+	    updateView(lastResult, lastCalcText);
+    }
+
+    protected void saveValues() {
+	    SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+	    SharedPreferences.Editor editor = sharedPref.edit();
+	    editor.putString(getSaveLastResultString(), calcModel.getRunningTotal().toString());
+	    editor.putString(getSaveLastCalcString(), calcModel.getCalcText());
+	    editor.commit();
+    }
+
+    protected String getSaveLastResultString() {
+	    String str = getString(R.string.decimal_last_result);
+	    return str;
+    }
+
+    protected String getSaveLastCalcString() {
+	    String str = getString(R.string.decimal_last_calctext);
+	    return str;
+    }
+
     protected void init() {
         calcModel = new CalculatorModel();
-        Log.i("Info", "Calculator model instance created!");
+	    openValues();
     }
 
     public void calcButtonClicked(View view)
@@ -38,11 +77,15 @@ public class CalcActivity extends AppCompatActivity {
         calcModel.processToken(btnText);
 
 //        // update views
-        TextView numView = (TextView)(findViewById(R.id.calcRunningTotalView));
-        numView.setText(calcModel.getRunningTotalDisplay());
+	    updateView(calcModel.getRunningTotalDisplay(), calcModel.getCalcText());
+    }
 
-        TextView calcView = (TextView)(findViewById(R.id.calcTextView));
-        calcView.setText(calcModel.getCalcText());
+    protected void updateView(String numViewText, String calcViewText) {
+	    TextView numView = (TextView)(findViewById(R.id.calcRunningTotalView));
+	    numView.setText(numViewText);
+
+	    TextView calcView = (TextView)(findViewById(R.id.calcTextView));
+	    calcView.setText(calcViewText);
     }
 
     public void saveResultToCSV(View view) {

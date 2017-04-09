@@ -225,6 +225,15 @@ public class CalculatorModel {
     public void setValue(BigDecimal value) {
 	    m_runningTotal = value;
 	    m_tempRunningTotal = value;
+
+	    // fake out that we've entered a num if not default value
+	    if (!value.equals("0") || !value.equals("0.0")) {
+		    m_hasEnteredNum = true;
+	    }
+    }
+
+    public void setCalcText(String text) {
+	    m_calcText = text;
     }
 
     public String getRunningTotalDisplay() {

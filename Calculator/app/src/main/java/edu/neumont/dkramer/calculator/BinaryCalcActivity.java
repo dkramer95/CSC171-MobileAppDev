@@ -40,6 +40,7 @@ public class BinaryCalcActivity extends CalcActivity {
 	    super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_binary_calc);
 	    resetBitButtons();
+	    updateBitView();
     }
 
     @Override
@@ -69,6 +70,7 @@ public class BinaryCalcActivity extends CalcActivity {
     @Override
     protected void init() {
         calcModel = new BinaryCalculatorModel();
+	    openValues();
     }
 
     protected void resetBitButtons() {
@@ -110,5 +112,17 @@ public class BinaryCalcActivity extends CalcActivity {
 	    TextView numView = (TextView)(findViewById(R.id.calcRunningTotalView));
 	    numView.setText(calcModel.getRunningTotalDisplay());
     }
+
+	@Override
+	protected String getSaveLastResultString() {
+		String str = getString(R.string.binary_last_result);
+		return str;
+	}
+
+	@Override
+	protected String getSaveLastCalcString() {
+		String str = getString(R.string.binary_last_calctext);
+		return str;
+	}
 
 }
