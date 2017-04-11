@@ -537,7 +537,7 @@
                 android:layout_gravity="fill_vertical"
                 android:layout_row="0"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/shadow"
                 android:minHeight="60dp"
                 android:onClick="equalsCalcButtonClicked"
                 android:text="="

@@ -105,1119 +105,1142 @@
     </LinearLayout>
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/bitButtons"
         android:layout_width="match_parent"
-        android:layout_height="99dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:background="@drawable/myrect"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <LinearLayout
+            android:id="@+id/bitButtons"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:padding="0dp"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
+            android:layout_margin="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:elevation="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                android:weightSum="4"
-                >
+                android:padding="0dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
-                <Button
-                    android:id="@+id/bitButton63"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:minWidth="20dp"
-                    android:onClick="setBit"
-                    android:padding="0dp"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    >
 
-                <Button
-                    android:id="@+id/bitButton62"
+                    <Button
+                        android:id="@+id/bitButton63"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:minWidth="20dp"
+                        android:onClick="setBit"
+                        android:padding="0dp"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton62"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:padding="0dp"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton61"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:padding="0dp"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton60"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:padding="0dp"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"/>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:padding="0dp"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:orientation="horizontal"
+                    >
 
-                <Button
-                    android:id="@+id/bitButton61"
+                    <Button
+                        android:id="@+id/bitButton59"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton58"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton57"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton56"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"/>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:padding="0dp"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:orientation="horizontal"
+                    >
 
-                <Button
-                    android:id="@+id/bitButton60"
+                    <Button
+                        android:id="@+id/bitButton55"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton54"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton53"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton52"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"/>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:padding="0dp"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton51"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton50"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton49"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton48"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton47"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton46"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton45"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton44"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton43"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton42"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton41"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton40"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton39"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton38"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton37"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton36"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton35"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton34"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton33"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton32"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
             </LinearLayout>
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"/>
-
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/bitButton59"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:gravity="center_vertical"
+                    android:text="63"/>
 
-                <Button
-                    android:id="@+id/bitButton58"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="0.26"
+                    android:gravity="center_vertical"
+                    android:paddingRight="5dp"
+                    android:text="47"
+                    android:textAlignment="textEnd"/>
 
-                <Button
-                    android:id="@+id/bitButton57"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton56"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:gravity="center_vertical"
+                    android:paddingRight="0dp"
+                    android:text="32"
+                    android:textAlignment="textEnd"/>
             </LinearLayout>
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"/>
-
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                >
+                android:padding="0dp">
 
-                <Button
-                    android:id="@+id/bitButton55"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    >
 
-                <Button
-                    android:id="@+id/bitButton54"
+                    <Button
+                        android:id="@+id/bitButton31"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:minWidth="20dp"
+                        android:onClick="setBit"
+                        android:padding="0dp"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton30"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:padding="0dp"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton29"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:padding="0dp"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton28"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:padding="0dp"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"/>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:orientation="horizontal"
+                    >
 
-                <Button
-                    android:id="@+id/bitButton53"
+                    <Button
+                        android:id="@+id/bitButton27"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton26"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton25"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton24"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"/>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:orientation="horizontal"
+                    >
 
-                <Button
-                    android:id="@+id/bitButton52"
+                    <Button
+                        android:id="@+id/bitButton23"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton22"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton21"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton20"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"/>
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton19"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton18"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton17"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton16"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton15"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton14"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton13"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton12"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton11"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton10"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton9"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton8"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/bitButton3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="64"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="1"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+
+                    <Button
+                        android:id="@+id/bitButton0"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="setBit"
+                        android:tag="0"
+                        android:text="1"
+                        android:textSize="18sp"
+                        android:typeface="monospace"/>
+                </LinearLayout>
+
             </LinearLayout>
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"/>
-
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                >
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
-                <Button
-                    android:id="@+id/bitButton51"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:gravity="bottom"
+                    android:text="31"/>
 
-                <Button
-                    android:id="@+id/bitButton50"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="0.18"
+                    android:gravity="bottom"
+                    android:paddingRight="5dp"
+                    android:text="15"
+                    android:textAlignment="textEnd"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton49"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton48"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton47"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton46"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton45"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton44"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton43"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton42"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton41"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton40"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton39"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton38"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton37"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton36"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton35"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton34"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton33"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton32"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
+                    android:gravity="bottom"
+                    android:paddingRight="0dp"
+                    android:text="0"
+                    android:textAlignment="textEnd"/>
             </LinearLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="63"/>
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.26"
-                android:paddingRight="5dp"
-                android:text="47"
-                android:textAlignment="textEnd"/>
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="0dp"
-                android:text="32"
-                android:textAlignment="textEnd"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:padding="0dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:weightSum="4"
-                >
-
-                <Button
-                    android:id="@+id/bitButton31"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:minWidth="20dp"
-                    android:onClick="setBit"
-                    android:padding="0dp"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton30"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:padding="0dp"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton29"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:padding="0dp"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton28"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:padding="0dp"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton27"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton26"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton25"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton24"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton23"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton22"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton21"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton20"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton19"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton18"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton17"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton16"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton15"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton14"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton13"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton12"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton11"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton10"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton9"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton8"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton7"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton6"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton5"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton4"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".3"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/bitButton3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="64"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="1"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-
-                <Button
-                    android:id="@+id/bitButton0"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimaryDark"
-                    android:onClick="setBit"
-                    android:tag="0"
-                    android:text="1"
-                    android:textSize="18sp"
-                    android:typeface="monospace"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="31"/>
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.18"
-                android:paddingRight="5dp"
-                android:text="15"
-                android:textAlignment="textEnd"/>
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="0dp"
-                android:text="0"
-                android:textAlignment="textEnd"/>
-        </LinearLayout>
-
     </LinearLayout>
 
     <LinearLayout
@@ -1493,7 +1516,7 @@
                 android:layout_gravity="fill_vertical"
                 android:layout_row="0"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/equalsbutton"
                 android:minHeight="60dp"
                 android:onClick="equalsCalcButtonClicked"
                 android:text="="
